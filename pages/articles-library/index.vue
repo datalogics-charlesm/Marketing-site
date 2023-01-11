@@ -4,10 +4,12 @@
       <div class="card w-96 bg-base-100 shadow-xl">
         <figure><img :src="post.feature_image" alt="Shoes" /></figure>
         <div class="card-body">
-          <h2 class="card-title">
-            {{ post.title }}
-            <div class="badge badge-secondary">NEW</div>
-          </h2>
+          <NuxtLink :to="'/articles-library/' + post.slug"
+            ><h2 class="card-title">
+              {{ post.title }}
+              <div class="badge badge-secondary">NEW</div>
+            </h2></NuxtLink
+          >
           <p v-html="post.excerpt" class="prose"></p>
           <div
             class="card-actions justify-end"
@@ -28,6 +30,9 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'IndexPage',
+  mounted() {
+    this.$route.name
+  },
   async asyncData() {
     const companyNews = await getPages()
 

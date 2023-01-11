@@ -47,6 +47,18 @@ export async function getPages() {
     })
 }
 
+/**
+ * @async
+ * @function
+ * @returns {Promise<object>} - The response from the Ghost Content API containing the page
+ * @throws {Error} - if there is an error with the API request
+ */
+export async function getPageBySlug(slug) {
+  return await api.pages.read({ slug: slug }).catch((err) => {
+    console.error(err)
+  })
+}
+
 export async function getPostsPaginate(tags, pageNum, numPosts) {
   let tagList = ''
   for (var i = 0; i < tags.length; i++) {
