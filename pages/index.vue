@@ -4,8 +4,12 @@
     <div class="mx-auto"><h2>Here are the articles:</h2></div>
     <div class="mx-auto">
       <NuxtLink to="/articles-library" class="btn">Link!</NuxtLink>
+      <NuxtLink to="homepage" class="btn">Home Page</NuxtLink>
     </div>
+
+
   </div>
+
+
 </template>
 
-<script></script>
