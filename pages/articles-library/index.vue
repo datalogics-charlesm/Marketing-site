@@ -23,13 +23,13 @@
 </template>
 
 <script>
-import { getPosts } from '../../ghost-api/posts.js'
+import { getPages } from '../../ghost-api/posts.js'
 import Vue from 'vue'
 
 export default Vue.extend({
   name: 'IndexPage',
   async asyncData() {
-    const companyNews = await getPosts('company-news')
+    const companyNews = await getPages()
 
     return {
       companyNews: companyNews,

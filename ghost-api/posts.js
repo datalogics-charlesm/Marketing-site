@@ -6,6 +6,18 @@ const api = new GhostContentAPI({
   version: 'v5.17.0',
 })
 
+/** NOTE endpoints
+ * LINK https://ghost.org/docs/content-api/javascript/#endpoints
+ *
+ * Here you can define a new endpoint you'd like to hit, you can see the link above for the full list
+ *
+ * @async
+ * @function
+ * @param {string} tag - The tag to filter the posts by
+ * @returns {Promise<object>} - The response from the API containing the filtered posts
+ * @throws {Error} - if there is an error with the API request
+ */
+
 export async function getPosts(tag) {
   return await api.posts
     .browse({
@@ -14,6 +26,23 @@ export async function getPosts(tag) {
     })
     .catch((err) => {
       console.log(tag)
+      console.error(err)
+    })
+}
+
+/**
+ * @asyn
+ * @function
+ * @returns {Promise<object>} - The response from the Ghost Content API containing the page
+ * @throws {Error} - if there is an error with the API request
+ */
+export async function getPages() {
+  return await api.pages
+    .browse({
+      limit: 10,
+      include: 'tags,authors',
+    })
+    .catch((err) => {
       console.error(err)
     })
 }
