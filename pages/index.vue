@@ -7,9 +7,6 @@
       <NuxtLink to="homepage" class="btn">Home Page</NuxtLink>
     </div>
 
-
+    <TitleBody :tag="'hash-homepage'" />
   </div>
-
-
 </template>
-
