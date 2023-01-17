@@ -1,21 +1,31 @@
 
+import SupportedPlatforms from '~/components/SupportedPlatforms.vue';
+
+
+import FeaturesBox from '~/components/FeaturesBox.vue';
+
+
 
 
 <template>
     <div class="pagecontainer">
         
-    <div class="flex flex-row justify-around">
+    <div class="flex flex-row justify-center space-x-96">
             <!-- Content Box -->
 
             <div>
-                
-                <h1>Text will go here</h1>
+
+                <div class="bg-dk-blue-shade-1 border-dk-blue-shade-2 border-4 rounded-lg text-5xl">
+                    <h1>Take Control of</h1>
+                    <h1 text-accent>PDF Workflows</h1>
+                </div>
+                <SupportedPlatforms/>
 
             <!-- Circle Icons -->
 
             </div>
 
-            <div>
+            <div class="inline-flex pb-96 pt-60">
 
                 <CircleNav/>
 
@@ -23,103 +33,11 @@
 
     </div>
 
-    <div class="flex flex-row justify-center space-x-48 p-40">
-        <div class="flex flex-col bg-dk-blue-shade-1 w-1/3 p-16 space-y-2 rounded-2xl">
+    <div class="flex flex-row justify-center space-x-48 p-40 pt-60">
 
-            <h1 class="text-2xl">Creation & Modification</h1>
-            <hr class="solid w-72">
-
-        <p>
-            <li>Optimize for size</li>
-            <li>Merge/Split</li>
-            <li>Annotations</li>
-            <li>Flattening</li>
-            <li>Bookmarks, links, labels</li>
-            <li>Underlines/Highlights</li>
-            <li>Create Transparency</li>
-            <li>Add Content/Elements</li>
-            <li>Color spaces</li>
-        </p> 
-
-        <h1 class="text-2xl">Creation & Modification</h1>
-            <hr class="solid w-72">
-
-        <p>
-            <li>Optimize for size</li>
-            <li>Merge/Split</li>
-            <li>Annotations</li>
-            <li>Flattening</li>
-            <li>Bookmarks, links, labels</li>
-            <li>Underlines/Highlights</li>
-            <li>Create Transparency</li>
-            <li>Add Content/Elements</li>
-            <li>Color spaces</li>
-        </p> 
-        </div>
-        <div class="flex flex-col bg-dk-blue-shade-1 w-1/3 p-16 space-y-2 rounded-2xl">
-
-<h1 class="text-2xl">Creation & Modification</h1>
-<hr class="solid w-72">
-
-<p>
-<li>Optimize for size</li>
-<li>Merge/Split</li>
-<li>Annotations</li>
-<li>Flattening</li>
-<li>Bookmarks, links, labels</li>
-<li>Underlines/Highlights</li>
-<li>Create Transparency</li>
-<li>Add Content/Elements</li>
-<li>Color spaces</li>
-</p> 
-
-<h1 class="text-2xl">Creation & Modification</h1>
-<hr class="solid w-72">
-
-<p>
-<li>Optimize for size</li>
-<li>Merge/Split</li>
-<li>Annotations</li>
-<li>Flattening</li>
-<li>Bookmarks, links, labels</li>
-<li>Underlines/Highlights</li>
-<li>Create Transparency</li>
-<li>Add Content/Elements</li>
-<li>Color spaces</li>
-</p> 
-        </div>
-        <div class="flex flex-col bg-dk-blue-shade-1 w-1/3 p-16 space-y-2 rounded-2xl">
-
-<h1 class="text-2xl">Creation & Modification</h1>
-<hr class="solid w-72">
-
-<p>
-<li>Optimize for size</li>
-<li>Merge/Split</li>
-<li>Annotations</li>
-<li>Flattening</li>
-<li>Bookmarks, links, labels</li>
-<li>Underlines/Highlights</li>
-<li>Create Transparency</li>
-<li>Add Content/Elements</li>
-<li>Color spaces</li>
-</p> 
-
-<h1 class="text-2xl">Creation & Modification</h1>
-<hr class="solid w-72">
-
-<p>
-<li>Optimize for size</li>
-<li>Merge/Split</li>
-<li>Annotations</li>
-<li>Flattening</li>
-<li>Bookmarks, links, labels</li>
-<li>Underlines/Highlights</li>
-<li>Create Transparency</li>
-<li>Add Content/Elements</li>
-<li>Color spaces</li>
-</p> 
-        </div>
+        <FeaturesBox/>
+        <FeaturesBox/>
+        <FeaturesBox/>
         
     </div>
 

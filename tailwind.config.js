@@ -10,8 +10,9 @@ module.exports = {
   theme: {
     extend: {},
     colors: {
-      'dk-blue-shade-1': '#021733'
-    }
+      'dk-blue-shade-1': '#021733',
+      'dk-blue-shade-2':'#063573',
+    },
   },
   daisyui:{
     themes: [ 
