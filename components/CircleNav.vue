@@ -46,6 +46,7 @@
               <img class="links__icon" src="https://img.icons8.com/ios-filled/512/FFFFFF/paste-as-text.png">
               <span class="links__text">Text <br> Extraction</span></a>
           </li>
+          
         </ul>
       </div>
     </div>
