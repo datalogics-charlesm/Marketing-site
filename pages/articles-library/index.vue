@@ -30,9 +30,6 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'IndexPage',
-  mounted() {
-    this.$route.name
-  },
   async asyncData() {
     const companyNews = await getPages()
 
