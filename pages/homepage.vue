@@ -1,7 +1,7 @@
 <template>
   <!-- Content Box -->
   <div class="">
-    <div class="hero min-h-screen bg-base-200">
+    <div class="hero min-h-screen bg-base-200 mb-12">
       <div class="hero-content text-center mx-auto w-full">
         <div class="flex lg:flex-row">
           <div>
@@ -19,7 +19,7 @@
       </div>
     </div>
     <div
-      class="flex lg:flex-row w-fit mx-auto space-x-6"
+      class="flex lg:flex-row w-fit mx-auto space-x-6 mb-12"
     >
       <FeaturesBox 
         :featuresContentTagList="firstFeatureBoxTags"
@@ -32,15 +32,16 @@
       />
     </div>
     <div
-      class="min-h-screen"
+      class="min-h-screen w-1/2 mx-auto"
     >
-
+      <LowCodeTools />
     </div>
   </div>
 </template>
 <script>
 import Vue from 'vue'
 import CircleNav from '~/components/CircleNav.vue'
+import LowCodeTools from '~/components/homepage/LowCodeTools.vue'
 export default Vue.extend({
   name: 'homepage',
   data() {
@@ -58,6 +59,6 @@ export default Vue.extend({
       ],
     }
   },
-  components: { CircleNav },
+  components: { CircleNav, LowCodeTools },
 })
 </script>
