@@ -53,7 +53,7 @@
 </template>
 
 
-<style>
+<style scoped>
         :root {
   --base-grid: 8px;
   --colour-white: #fff;
@@ -75,7 +75,6 @@ body {
   font-family: Josefin Sans, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #051026;
 }
 
 .links {

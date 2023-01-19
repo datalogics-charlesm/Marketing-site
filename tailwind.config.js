@@ -12,7 +12,14 @@ module.exports = {
     colors: {
       'dk-blue-shade-1': '#021733',
       'dk-blue-shade-2':'#063573',
+      'dl-white':'"#FFF"'
     },
+
+    fontFamily: {
+      'filson':['filson-pro','sans-serif'],
+      'venn':['venn-pro','sans-serif'],
+    },
+    
   },
   daisyui:{
     themes: [ 
