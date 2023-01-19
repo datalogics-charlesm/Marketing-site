@@ -1,34 +1,51 @@
 <template>
-<div class="flex flex-col bg-dk-blue-shade-1 w-1/3 p-16 space-y-2 rounded-2xl">
-
-    <h1 class="text-2xl">Creation & Modification</h1>
-    <hr class="solid w-72">
-
-<p>
-    <li>Optimize for size</li>
-    <li>Merge/Split</li>
-    <li>Annotations</li>
-    <li>Flattening</li>
-    <li>Bookmarks, links, labels</li>
-    <li>Underlines/Highlights</li>
-    <li>Create Transparency</li>
-    <li>Add Content/Elements</li>
-    <li>Color spaces</li>
-</p> 
-
-<h1 class="text-2xl">Creation & Modification</h1>
-    <hr class="solid w-72">
-
-<p>
-    <li>Optimize for size</li>
-    <li>Merge/Split</li>
-    <li>Annotations</li>
-    <li>Flattening</li>
-    <li>Bookmarks, links, labels</li>
-    <li>Underlines/Highlights</li>
-    <li>Create Transparency</li>
-    <li>Add Content/Elements</li>
-    <li>Color spaces</li>
-</p> 
-</div>
-</template>
+    <div class="flex flex-col bg-dk-blue-shade-1 border-4 border-primary/50 w-1/3 max-w-fit min-w-fit p-16 space-y-4 card">
+        <div
+            v-for="(post, index) in postList"
+            :key="index"
+            class="space-y-8"
+        >
+            <h2 class="font-filson font-bold text-2xl">
+                {{ post.title }}
+            </h2>
+            <hr class="solid w-72 text-accent">
+        
+            <div
+                class="font-venn font-normal w-3/4 mx-auto"
+                v-html="post.html"
+            />
+        </div>
+    </div>
+    </template>
+    <script>
+    import Vue from 'vue';
+    import { getPostsMultiTag } from '~/ghost-api/posts';
+    export default Vue.extend({
+        name: 'FeaturesBox',
+        props: ['featuresContentTagList'],
+        data() {
+            return {
+                postList: []
+            }
+        },
+        async fetch() {
+            let postList = [];
+            for (let i = 0; i < this.featuresContentTagList.length; i++) {
+                let post = await getPostsMultiTag([
+                    'hash-hp-features',
+                    this.featuresContentTagList[i]
+                ])
+                postList.push(post[0]);
+            }
+            this.postList = postList
+        }
+    })
+    </script>
+    <style scoped>
+    :deep(ul) {
+        list-style-type: disc;
+    }
+    :deep(li) {
+        margin-top: 0.05rem;
+    }
+    </style>
