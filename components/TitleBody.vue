@@ -1,6 +1,6 @@
 <template>
   <!-- NOTE PASS IN A TAG USING :tag WHEN IMPORTING THE COMPONENT -->
-  <div v-if="heroText">
+  <div v-if="heroText" class="text-white">
     <h1>{{ heroText.title }}</h1>
     <div v-html="heroText.html"></div>
   </div>
@@ -31,3 +31,12 @@ export default Vue.extend({
   },
 })
 </script>
+
+<style scoped>
+:deep(h1) {
+  color: #fff;
+}
+:deep(h2) {
+  color: #fff;
+}
+</style>
