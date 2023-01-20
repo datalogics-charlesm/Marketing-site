@@ -1,7 +1,7 @@
 <template>
   <!-- Content Box -->
-  <div class="flex flex-col space-y-24">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"></link>
+  <div class="space-y-10">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
     
     <div class="hero min-h-screen bg-base-200 mb-20">
       <div class="hero-content text-center min-w-full">
@@ -41,8 +41,8 @@
       </div>
     </div>
 
-    <div class="min-h-screen w-1/2 mx-auto">
-      <LowCodeTools />
+    <div class="min-h-screen w-full mx-8 lg:max-w-5xl lg:mx-auto">
+      <LowCodeTools :lowCodePosts="lowCodePosts"/>
     </div>
 
     <div class="text-center bg-primary font-bold py-2">
@@ -58,10 +58,13 @@
 </template>
 <script>
 import Vue from 'vue'
+import { getPosts } from '~/ghost-api/posts'
+
 import CircleNav from '~/components/CircleNav.vue'
 import APDFLLinks from '~/components/homepage/APDFLLinks.vue'
 import Endorsements from '~/components/homepage/Endorsements.vue'
 import LowCodeTools from '~/components/homepage/LowCodeTools.vue'
+
 export default Vue.extend({
   name: 'homepage',
   data() {
@@ -77,6 +80,13 @@ export default Vue.extend({
         'hash-hp-conversion',
         'hash-hp-ocr',
       ],
+      lowCodePosts: []
+    }
+  },
+  async asyncData() {
+    const lowCodePosts = await getPosts('hash-hp-cl-sect')
+    return {
+      lowCodePosts: lowCodePosts.slice().reverse()
     }
   },
   components: { CircleNav, LowCodeTools, APDFLLinks, Endorsements },

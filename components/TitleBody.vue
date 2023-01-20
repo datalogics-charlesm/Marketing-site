@@ -22,7 +22,7 @@
       <h2 class="text-2xl font-white">
         {{ title }}
       </h2>
-      <div class="text-lg" v-html="body" />
+      <div class="text-xs font-venn font-light" v-html="body" />
     </div>
     <div v-else-if="title != null && body == null">
       <h2 class="text-2xl font-white">
@@ -69,7 +69,7 @@ export default Vue.extend({
       heroTexts: null,
     }
   },
-  async created() {
+  async fetch() {
     // NOTE Get the post using the tag passed as prop
     const heroTexts = await getPosts(this.tag)
     // NOTE Assign the post to heroText
