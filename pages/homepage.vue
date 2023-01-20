@@ -1,10 +1,10 @@
 <template>
   <!-- Content Box -->
-  <div class="space-y-10">
+  <div class="flex flex-col space-y-24">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"></link>
     
-    <div class="hero min-h-full pb-14 bg-base-200 mb-12">
-      <div class="hero-content  min-w-full">
+    <div class="hero min-h-screen bg-base-200 mb-20">
+      <div class="hero-content text-center min-w-full">
         <div class="flex lg:flex-row w-full justify-center">
           <div class="justify-start">
             <div class="w-full">
@@ -15,8 +15,8 @@
                 Take Control of <span class="text-accent">PDF</span> Workflows
               </h1>
             </div>
-            <TitleBody :tag="'hash-homeherotext'" class="prose mx-60 text-left pb-6" />
-            <SupportedPlatforms class=" mx-56" />
+            <TitleBody :tag="'hash-homeherotext'" class="prose text-white" />
+            <SupportedPlatforms />
           </div>
           </div>
           <div class=" m-44" ><CircleNav/></div>
@@ -26,20 +26,33 @@
 
     
 
-    <div class="hero">
-      <div class="">
-        <div class="max-w-full">
-      <APDFLLinks class=" space-x-60"/>
-        </div>
-      </div>
+    <div class="hero h-20">
+      <APDFLLinks class="hero-content place-content-center"/>
     </div>
-    <div class="flex lg:flex-row w-fit mx-auto space-x-6 mb-12">
+    <div class="flex flex-col lg:flex-row w-fit mx-auto space-x-6 mb-12">
       <FeaturesBox :featuresContentTagList="firstFeatureBoxTags" />
       <FeaturesBox :featuresContentTagList="secondFeatureBoxTags" />
       <FeaturesBox :featuresContentTagList="thirdFeatureBoxTags" />
     </div>
+
+        <div class="hero min-h-80 bg-base-content py-10">
+      <div class=" hero-content min-w-full">
+        <Endorsements class=""/>
+      </div>
+    </div>
+
     <div class="min-h-screen w-1/2 mx-auto">
       <LowCodeTools />
+    </div>
+
+    <div class="text-center bg-primary font-bold py-2">
+      <TitleBody :title="'Companion SDKs & Publishing Tools'"/>
+    </div>
+
+    <div class="hero">
+      <div class="hero-content min-w-full">
+        <TitleBody :tag="'hash-hp-sdk-pub'" class="prose text-primary-content w-3/4" :img_css="'max-h-44 max-w-sm'" />
+      </div>
     </div>
   </div>
 </template>
@@ -47,6 +60,7 @@
 import Vue from 'vue'
 import CircleNav from '~/components/CircleNav.vue'
 import APDFLLinks from '~/components/homepage/APDFLLinks.vue'
+import Endorsements from '~/components/homepage/Endorsements.vue'
 import LowCodeTools from '~/components/homepage/LowCodeTools.vue'
 export default Vue.extend({
   name: 'homepage',
@@ -65,7 +79,7 @@ export default Vue.extend({
       ],
     }
   },
-  components: { CircleNav, LowCodeTools, APDFLLinks },
+  components: { CircleNav, LowCodeTools, APDFLLinks, Endorsements },
 })
 </script>
 

@@ -1,17 +1,33 @@
 <template>
   <div>
     <!-- NOTE PASS IN A TAG USING :tag WHEN IMPORTING THE COMPONENT -->
-    <div v-if="heroText != null && tag != null" class="text-white">
-      <h2>{{ heroText.title }}</h2>
-      <div v-html="heroText.html" />
+    <div v-if="heroTexts != null && tag != null">
+      <div v-for="heroText in heroTexts" :key="heroText.id">
+        <div class="flex flex-row">
+          <div>
+            <img
+              :src="heroText.feature_image"
+              :alt="feature_image_alt"
+              :class="img_css"
+            />
+          </div>
+          <div class="flex-col">
+            <h2>{{ heroText.title }}</h2>
+            <div v-html="heroText.html" />
+          </div>
+        </div>
+      </div>
     </div>
     <div v-else-if="title != null && body != null">
-      <h2
-        class="text-2xl font-white"
-      >
+      <h2 class="text-2xl font-white">
         {{ title }}
       </h2>
       <div class="text-lg" v-html="body" />
+    </div>
+    <div v-else-if="title != null && body == null">
+      <h2 class="text-2xl font-white">
+        {{ title }}
+      </h2>
     </div>
   </div>
 </template>
@@ -43,17 +59,21 @@ export default Vue.extend({
       type: String,
       required: false,
     },
+    img_css: {
+      type: String,
+      required: false,
+    },
   },
   data() {
     return {
-      heroText: null,
+      heroTexts: null,
     }
   },
   async created() {
     // NOTE Get the post using the tag passed as prop
-    const heroText = await getPosts(this.tag)
+    const heroTexts = await getPosts(this.tag)
     // NOTE Assign the post to heroText
-    this.heroText = heroText[0]
+    this.heroTexts = heroTexts
   },
 })
 </script>
