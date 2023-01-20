@@ -5,7 +5,7 @@
         :to="post.excerpt"
       >
         <div
-          class="flex flex-row items-center h-full bg-neutral/25 rounded-2xl hover:bg-accent transition-all duration-250 ease-in-out"
+          class="flex flex-row items-center h-full bg-neutral/25 rounded-2xl hover:bg-accent transition-all duration-500 ease-in-out"
         >
           <div class="flex flex-row justify-evenly px-8 w-full">
             <img 

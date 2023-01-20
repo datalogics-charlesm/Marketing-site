@@ -18,8 +18,13 @@
         </div>
       </div>
     </div>
-    <div v-else-if="title != null && body != null">
-      <h2 class="text-2xl font-white">
+    <div 
+      v-else-if="title != null && body != null"
+      class="w-full"
+    >
+      <h2
+        class="text-3xl font-filson font-semibold font-white pb-3"
+      >
         {{ title }}
       </h2>
       <div class="text-xs font-venn font-light" v-html="body" />
