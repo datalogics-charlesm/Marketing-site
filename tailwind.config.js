@@ -20,10 +20,12 @@ module.exports = {
       {
         mytheme: {
           primary: '#0C70F2',
+          'primary-focus':'#063573',
           secondary: '#F224AC',
           accent: '#F2A20C',
           neutral: '#063573',
           'base-100': '#051026',
+          'base-content':'#021733',
           info: '#FFFFFF',
           success: '#36D399',
           warning: '#F2D424',

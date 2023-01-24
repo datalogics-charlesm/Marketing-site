@@ -8,7 +8,7 @@
         <div class="flex lg:flex-row w-full justify-center">
           <div>
             <div
-              class="bg-dk-blue-shade-1 border-dk-blue-shade-2 border-4 rounded-lg text-5xl p-4 max-w-1/2"
+              class="bg-base-content border-primary-content border-4 rounded-lg text-5xl p-4 max-w-1/2"
             >
               <h1 class="font-filson font-extrabold text-dl-white">
                 Take Control of <span class="text-accent">PDF</span> Workflows
