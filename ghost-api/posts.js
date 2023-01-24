@@ -18,10 +18,11 @@ const api = new GhostContentAPI({
  * @throws {Error} - if there is an error with the API request
  */
 
-export async function getPosts(tag) {
+export async function getPosts(tag, limit) {
   return await api.posts
     .browse({
       filter: 'tag:' + tag,
+      limit: limit ? limit : 15,
       include: 'tags,authors',
     })
     .catch((err) => {

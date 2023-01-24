@@ -7,7 +7,7 @@
           <div>
             <img
               :src="heroText.feature_image"
-              :alt="feature_image_alt"
+              :alt="heroText.feature_image_alt"
               :class="img_css"
             />
           </div>
