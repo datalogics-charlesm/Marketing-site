@@ -4,10 +4,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
     
     <div class="hero min-h-full pb-14 bg-base-200 mb-12">
-      <div class="hero-content text-center min-w-full">
+      <div class="hero-content min-w-full">
         <div class="flex lg:flex-row w-full justify-center">
           <div class="justify-start">
-            <div class="w-full">
+            <div class="w-full ">
             <div
               class="bg-base-content border-primary-focus border-4 rounded-lg text-7xl p-4 max-w-1/2 w-7/12 mx-auto"
             >
@@ -20,10 +20,10 @@
               :hide_title="true"
               class="prose mx-60 text-left pb-6 text-white" 
             />
-            <SupportedPlatforms />
+            <SupportedPlatforms class=" ml-56" />
           </div>
           </div>
-          <div class=" m-44" ><CircleNav/></div>
+          <div class="m-44 mr-96" ><CircleNav/></div>
         </div>
       </div>
     </div>
@@ -33,19 +33,19 @@
     <div class="hero h-20">
       <APDFLLinks class="hero-content place-content-center"/>
     </div>
-    <div class="flex flex-col lg:flex-row w-fit mx-auto space-x-6 mb-12">
+    <div class="flex flex-col lg:flex-row w-fit mx-auto space-x-6 mb-12 pb-24">
       <FeaturesBox :featuresContentTagList="firstFeatureBoxTags" />
       <FeaturesBox :featuresContentTagList="secondFeatureBoxTags" />
       <FeaturesBox :featuresContentTagList="thirdFeatureBoxTags" />
     </div>
 
-        <div class="hero min-h-80 bg-base-content py-10">
+        <div class="hero min-h-80 bg-base-content py-10 ">
       <div class=" hero-content min-w-full">
         <Endorsements class=""/>
       </div>
     </div>
 
-    <div class="min-h-screen w-full mx-8 lg:max-w-5xl lg:mx-auto">
+    <div class="min-h-full w-full mx-8 lg:max-w-5xl lg:mx-auto pb-24 pt-24">
       <LowCodeTools :lowCodePosts="lowCodePosts"/>
     </div>
 
