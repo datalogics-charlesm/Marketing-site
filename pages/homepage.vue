@@ -3,7 +3,7 @@
   <div class="space-y-10">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
     
-    <div class="hero min-h-screen bg-base-200 mb-20">
+    <div class="hero min-h-full pb-14 bg-base-200 mb-12">
       <div class="hero-content text-center min-w-full">
         <div class="flex lg:flex-row w-full justify-center">
           <div class="justify-start">
@@ -15,7 +15,11 @@
                 Take Control of <span class="text-accent">PDF</span> Workflows
               </h1>
             </div>
-            <TitleBody :tag="'hash-homeherotext'" class="prose text-white" />
+            <TitleBody
+              :tag="'hash-homeherotext'" 
+              :hide_title="true"
+              class="prose mx-60 text-left pb-6 text-white" 
+            />
             <SupportedPlatforms />
           </div>
           </div>

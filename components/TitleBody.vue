@@ -12,7 +12,7 @@
             />
           </div>
           <div class="flex-col">
-            <h2>{{ heroText.title }}</h2>
+            <h2 v-if="!hide_title">{{ heroText.title }}</h2>
             <div v-html="heroText.html" />
           </div>
         </div>
@@ -23,6 +23,7 @@
       class="w-full"
     >
       <h2
+        v-if="!hide_title"
         class="text-3xl font-filson font-semibold font-white pb-3"
       >
         {{ title }}
@@ -66,6 +67,10 @@ export default Vue.extend({
     },
     img_css: {
       type: String,
+      required: false,
+    },
+    hide_title: {
+      type: Boolean,
       required: false,
     },
   },
