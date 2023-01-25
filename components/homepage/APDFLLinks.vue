@@ -1,7 +1,7 @@
 <template>
-  <div class="grid grid-cols-4 gap-x-10 w-full">
+  <div class="flex flex-row w-full">
     <div v-for="link in links" :key="link.id" class="">
-      <div class="btn rounded">
+      <div class="btn rounded-3xl">
         <i class="icon icon-4691586_nuget_icon"></i>{{ link.name }}
       </div>
     </div>

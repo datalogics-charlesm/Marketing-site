@@ -3,29 +3,35 @@
   <div class="space-y-10">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"></link>
     
-    <div class="hero min-h-screen bg-base-200 mb-12">
-      <div class="hero-content text-center min-w-full">
+    <div class="hero min-h-full pb-14 bg-base-200 mb-12">
+      <div class="hero-content  min-w-full">
         <div class="flex lg:flex-row w-full justify-center">
-          <div>
+          <div class="justify-start">
+            <div class="w-full">
             <div
-              class="bg-base-content border-primary-content border-4 rounded-lg text-5xl p-4 max-w-1/2"
+              class="bg-base-content border-primary-focus border-4 rounded-lg text-7xl p-4 max-w-1/2 w-7/12 mx-auto"
             >
-              <h1 class="font-filson font-extrabold text-dl-white">
+              <h1 class="font-filson font-extrabold text-dl-white p-0 text-left">
                 Take Control of <span class="text-accent">PDF</span> Workflows
               </h1>
             </div>
-            <TitleBody :tag="'hash-homeherotext'" class="prose" />
-            <SupportedPlatforms />
+            <TitleBody :tag="'hash-homeherotext'" class="prose mx-60 text-left pb-6" />
+            <SupportedPlatforms class=" mx-56" />
           </div>
-          <CircleNav class="w-1/4" />
+          </div>
+          <div class=" m-44" ><CircleNav/></div>
         </div>
       </div>
     </div>
 
     
 
-    <div class="hero h-20">
-      <APDFLLinks class="hero-content"/>
+    <div class="hero">
+      <div class="">
+        <div class="max-w-full">
+      <APDFLLinks class=" space-x-60"/>
+        </div>
+      </div>
     </div>
     <div class="flex lg:flex-row w-fit mx-auto space-x-6 mb-12">
       <FeaturesBox :featuresContentTagList="firstFeatureBoxTags" />
@@ -62,3 +68,15 @@ export default Vue.extend({
   components: { CircleNav, LowCodeTools, APDFLLinks },
 })
 </script>
+
+<style>
+    #circle {
+      width: 800px;
+      height: 800px;
+      -webkit-border-radius: 25px;
+      -moz-border-radius: 25px;
+      border-radius: 300px;
+      background: red;
+    }
+
+</style>
