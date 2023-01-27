@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col bg-base-content border-4 border-primary/50 w-1/3 max-w-fit min-w-fit p-16 space-y-4 card"
+    class="flex flex-col bg-base-content/100 border-4 border-primary/50 w-1/3 max-w-fit min-w-fit p-16 space-y-4 rounded-3xl"
   >
     <div 
       v-for="(post, index) in postList" 

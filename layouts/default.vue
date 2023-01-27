@@ -1,7 +1,7 @@
 import NavBar from '~/components/navBar.vue';
 
 <template>
-  <div class="text-white">
+  <div class="text-white static">
     <NavBar />
     <Nuxt />
   </div>

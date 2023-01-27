@@ -1,10 +1,19 @@
 <template>
   <!-- Content Box -->
-  <div class="space-y-10">
+  <div class="space-y-10 relative mt-36">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
     
-    <div class="hero min-h-full pb-14 bg-base-200 mb-12">
-      <div class="hero-content min-w-full">
+    <div class="hero min-h-full pb-14 mb-12 relative">
+      <div
+        class="absolute w-screen min-h-screen overflow-hidden -z-50"
+      >
+        <img 
+          :src="backgroundImage.feature_image"
+          :alt="backgroundImage.feature_image_alt"
+          class="w-full h-full opacity-5 translate-y-96 -translate-x-10"
+        />
+      </div>
+      <div class="hero-content min-w-full z-10">
         <div class="flex lg:flex-row w-full justify-center">
           <div class="justify-start">
             <div class="w-full ">
@@ -27,8 +36,6 @@
         </div>
       </div>
     </div>
-
-    
 
     <div class="hero h-20">
       <APDFLLinks class="hero-content place-content-center"/>
@@ -89,8 +96,10 @@ export default Vue.extend({
   },
   async asyncData() {
     const lowCodePosts = await getPosts('hash-hp-cl-sect')
+    const backgroundImage = await getPosts('hash-hp-background-image')
     return {
-      lowCodePosts: lowCodePosts.slice().reverse()
+      lowCodePosts: lowCodePosts.slice().reverse(),
+      backgroundImage: backgroundImage[0]
     }
   },
   components: { CircleNav, LowCodeTools, APDFLLinks, Endorsements },
@@ -106,5 +115,4 @@ export default Vue.extend({
       border-radius: 300px;
       background: red;
     }
-
 </style>

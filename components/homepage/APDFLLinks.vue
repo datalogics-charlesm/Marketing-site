@@ -12,6 +12,7 @@
       >
         <i
           v-if="link.name.includes('NuGet')"
+          class="-translate-y-0.5"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -23,7 +24,7 @@
             class="text-white transition-all duration-500 ease group-hover:text-primary-content"
           >
             <g
-              fill="#ffffff"
+              fill="currentColor"
               fill-rule="nonzero"
               stroke="none"
               stroke-width="1"
@@ -49,7 +50,7 @@
         <font-awesome-icon
           v-if="link.name.includes('GitHub')"
           icon="fa-brands fa-github"
-          class="text-white text-normal transition-all duration-500 ease group-hover:text-primary-content"
+          class="text-white text-normal transition-all duration-500 ease group-hover:text-primary-content -translate-y-px"
         />
         <span
           class="h-fit w-fit transition-all duration-500 ease group-hover:text-primary-content"

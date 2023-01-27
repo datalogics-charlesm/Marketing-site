@@ -34,9 +34,6 @@ export default Vue.extend({
       required: false,
     },
   },
-  mounted() {
-    console.log(this.post)
-  },
   components: { TitleBody },
 })
 </script>

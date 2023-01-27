@@ -31,6 +31,19 @@ export async function getPosts(tag, limit) {
     })
 }
 
+export async function getPost(tag) {
+  let post = await api.posts
+  .browse({
+    filter: 'tag:' + tag,
+    include: 'tags,authors',
+  })
+  .catch((err) => {
+    console.error(err)
+  })
+
+  return post[0]
+}
+
 /**
  * @asyn
  * @function
