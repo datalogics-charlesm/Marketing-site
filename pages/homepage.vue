@@ -32,7 +32,7 @@
             <SupportedPlatforms class=" ml-56" />
           </div>
           </div>
-          <div class="m-44 mr-96" ><CircleNav/></div>
+          <div class="m-44 mr-[550px]" ><CircleNav/></div>
         </div>
       </div>
     </div>
@@ -60,9 +60,18 @@
       <TitleBody :title="'Companion SDKs & Publishing Tools'"/>
     </div>
 
-    <div class="hero">
-      <div class="hero-content min-w-full">
-        <TitleBody :tag="'hash-hp-sdk-pub'" class="prose text-primary-content w-3/4" :img_css="'max-h-44 max-w-sm'" />
+    <div class="">
+      <div class="min-w-full ">
+        <TitleBodyLink 
+        v-for="(post,index) in sdkposts"
+        :key="index"
+        :post="post"
+         class="prose text-primary-content max-w-5xl text-lg m-auto" 
+         :img_css="'max-h-44 max-w-sm mr-28'"
+         :link_css="'text-accent text-base font-bold'" 
+         />
+
+
       </div>
     </div>
   </div>
@@ -75,9 +84,20 @@ import CircleNav from '~/components/CircleNav.vue'
 import APDFLLinks from '~/components/homepage/APDFLLinks.vue'
 import Endorsements from '~/components/homepage/Endorsements.vue'
 import LowCodeTools from '~/components/homepage/LowCodeTools.vue'
+import TitleBodyLink from '~/components/TitleBodyLink.vue'
 
 export default Vue.extend({
   name: 'homepage',
+  async asyncData() {
+    const lowCodePosts = await getPosts('hash-hp-cl-sect')
+    const backgroundImage = await getPosts('hash-hp-background-image')
+    const sdkposts = await getPosts('hash-hp-sdk-pub')
+    return {
+      lowCodePosts: lowCodePosts.slice().reverse(),
+      backgroundImage: backgroundImage[0],
+      sdkposts: sdkposts.slice().reverse(),
+    }
+  },
   data() {
     return {
       firstFeatureBoxTags: ['hash-hpc-m', 'hash-hp-extraction'],
@@ -94,15 +114,8 @@ export default Vue.extend({
       lowCodePosts: []
     }
   },
-  async asyncData() {
-    const lowCodePosts = await getPosts('hash-hp-cl-sect')
-    const backgroundImage = await getPosts('hash-hp-background-image')
-    return {
-      lowCodePosts: lowCodePosts.slice().reverse(),
-      backgroundImage: backgroundImage[0]
-    }
-  },
-  components: { CircleNav, LowCodeTools, APDFLLinks, Endorsements },
+
+  components: { CircleNav, LowCodeTools, APDFLLinks, Endorsements, TitleBodyLink },
 })
 </script>
 

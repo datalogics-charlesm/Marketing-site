@@ -1,74 +1,24 @@
 <template lang="">
-  <div class="grid grid-cols-7 gap-x-12 gap-y-20">
-    <div v-for="company in companys" :key="company.id">
-      <img :src="company.logo" :alt="company.name" class="h-24 w-auto" />
-    </div>
-  </div>
+
+<div v-html="logos.html" class="grid grid-cols-7 gap-16 px-[475px] gap-y-36 py-10" >
+</div>
 </template>
 <script>
+import { getPosts } from '~/ghost-api/posts';
 export default {
-  data() {
-    return {
-      companys: [
-        {
-          name: 'company-name',
-          logo: 'https://www.datalogics.com/wp-content/uploads/2022/12/callas_b.png',
-        },
-        {
-          name: 'company-name',
-          logo: 'https://www.datalogics.com/wp-content/uploads/2022/12/callas_b.png',
-        },
-        {
-          name: 'company-name',
-          logo: 'https://www.datalogics.com/wp-content/uploads/2022/12/callas_b.png',
-        },
-        {
-          name: 'company-name',
-          logo: 'https://www.datalogics.com/wp-content/uploads/2022/12/callas_b.png',
-        },
-        {
-          name: 'company-name',
-          logo: 'https://www.datalogics.com/wp-content/uploads/2022/12/callas_b.png',
-        },
-        {
-          name: 'company-name',
-          logo: 'https://www.datalogics.com/wp-content/uploads/2022/12/callas_b.png',
-        },
-        {
-          name: 'company-name',
-          logo: 'https://www.datalogics.com/wp-content/uploads/2022/12/callas_b.png',
-        },
-        {
-          name: 'company-name',
-          logo: 'https://www.datalogics.com/wp-content/uploads/2022/12/callas_b.png',
-        },
-        {
-          name: 'company-name',
-          logo: 'https://www.datalogics.com/wp-content/uploads/2022/12/callas_b.png',
-        },
-        {
-          name: 'company-name',
-          logo: 'https://www.datalogics.com/wp-content/uploads/2022/12/callas_b.png',
-        },
-        {
-          name: 'company-name',
-          logo: 'https://www.datalogics.com/wp-content/uploads/2022/12/callas_b.png',
-        },
-        {
-          name: 'company-name',
-          logo: 'https://www.datalogics.com/wp-content/uploads/2022/12/callas_b.png',
-        },
-        {
-          name: 'company-name',
-          logo: 'https://www.datalogics.com/wp-content/uploads/2022/12/callas_b.png',
-        },
-        {
-          name: 'company-name',
-          logo: 'https://www.datalogics.com/wp-content/uploads/2022/12/callas_b.png',
-        },
-      ],
-    }
-  },
+
+ data() {
+  return {
+   logos: {},
+  }
+},
+
+  async fetch() {
+      const logos = await getPosts("hash-hp-end-logos")
+      this.logos = logos[0];
+    },
 }
+
+
 </script>
 <style lang=""></style>
