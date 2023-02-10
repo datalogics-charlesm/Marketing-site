@@ -29,7 +29,7 @@
               :hide_title="true"
               class="prose mx-60 text-left pb-6 text-white" 
             />
-            <SupportedPlatforms class=" ml-56" />
+            <SupportedPlatforms class="ml-56" />
           </div>
           </div>
           <div class="m-44 mr-[550px]" ><CircleNav/></div>
@@ -52,21 +52,26 @@
       </div>
     </div>
 
+    <div class="flex justify-center m-auto">
+      <TitleBody class="text-accent" :title="'Low Code Command Line Tools'"/>
+    </div>
+
     <div class="min-h-full w-full mx-8 lg:max-w-5xl lg:mx-auto pb-24 pt-24">
       <LowCodeTools :lowCodePosts="lowCodePosts"/>
     </div>
 
     <div class="text-center bg-primary font-bold py-2">
+      <!-- make this to where it pulls only the POST title from ghost -->
       <TitleBody :title="'Companion SDKs & Publishing Tools'"/>
     </div>
 
     <div class="">
-      <div class="min-w-full ">
+      <div class="min-w-full">
         <TitleBodyLink 
         v-for="(post,index) in sdkposts"
         :key="index"
         :post="post"
-         class="prose text-primary-content max-w-5xl text-lg m-auto" 
+         class="prose text-primary-content max-w-5xl m-auto" 
          :img_css="'max-h-44 max-w-sm mr-28'"
          :link_css="'text-accent text-base font-bold'" 
          />

@@ -28,7 +28,7 @@
       >
         {{ title }}
       </h2>
-      <div class="text-xs font-venn font-light" v-html="body" />
+      <div class=" text-base font-normal font-venn font-light" v-html="body" />
     </div>
     <div v-else-if="title != null && body == null">
       <h2 class="text-2xl font-white">
