@@ -12,6 +12,7 @@
                 <TitleBody
               :tag="'hash-pricingtitlebody'" 
               :hide_title="false"
+              :hide_body="true"
               class="prose text-base font-normal font-venn font-light"
                  
             />

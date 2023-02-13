@@ -27,6 +27,7 @@
             <TitleBody
               :tag="'hash-homeherotext'" 
               :hide_title="true"
+              :hide_body="false"
               class="prose mx-60 text-left pb-6 text-white" 
             />
             <SupportedPlatforms class="ml-56" />
@@ -53,11 +54,15 @@
     </div>
 
     <div class="flex justify-center m-auto">
-      <TitleBody class="text-accent" :title="'Low Code Command Line Tools'"/>
+      <TitleBody :title_css="'text-2xl text-accent font-filson font-semibold'" :title="'Low Code Command Line Tools'"/>
     </div>
 
     <div class="min-h-full w-full mx-8 lg:max-w-5xl lg:mx-auto pb-24 pt-24">
-      <LowCodeTools :lowCodePosts="lowCodePosts"/>
+      <LowCodeTools 
+      :lowCodePosts="lowCodePosts" 
+      :title_css="'text-3xl font-filson font-semibold text-white pb-3'"
+      :body_css="'text-base font-normal font-venn font-light'"
+      />
     </div>
 
     <div class="text-center bg-primary font-bold py-2">

@@ -13,7 +13,7 @@
           </div>
           <div class="flex-col">
             <h2 v-if="!hide_title">{{ heroText.title }}</h2>
-            <div v-html="heroText.html" />
+          <div v-if="!hide_body" v-html="heroText.html" />
           </div>
         </div>
       </div>
@@ -24,14 +24,17 @@
     >
       <h2
         v-if="!hide_title"
-        class="text-3xl font-filson font-semibold font-white pb-3"
+        :class="title_css"
       >
+      <!-- text-3xl font-filson font-semibold text-white pb-3 -->
         {{ title }}
       </h2>
-      <div class=" text-base font-normal font-venn font-light" v-html="body" />
+      <div :class="body_css" v-html="body" />
+      <!-- text-base font-normal font-venn font-light -->
     </div>
     <div v-else-if="title != null && body == null">
-      <h2 class="text-2xl font-white">
+      <h2 :class="title_css">
+        <!-- text-2xl text-accent -->
         {{ title }}
       </h2>
     </div>
@@ -73,6 +76,10 @@ export default Vue.extend({
       type: Boolean,
       required: false,
     },
+    hide_body: {
+      type: Boolean,
+      required: false,
+    },
   },
   data() {
     return {
@@ -88,11 +95,5 @@ export default Vue.extend({
 })
 </script>
 
-<style scoped>
-:deep(h1) {
-  color: #fff;
-}
-:deep(h2) {
-  color: #fff;
-}
+
 </style>
