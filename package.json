@@ -17,7 +17,7 @@
     "@tryghost/content-api": "^1.11.5",
     "core-js": "^3.25.3",
     "daisyui": "^2.46.1",
-    "nuxt": "^2.15.8",
+    "nuxt": "^3.2.2",
     "vue": "^2.7.10",
     "vue-server-renderer": "^2.7.10",
     "vue-template-compiler": "^2.7.10"
